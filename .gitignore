@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+=======
 # Logs
 logs
 *.log
@@ -102,3 +117,4 @@ dist
 
 # TernJS port file
 .tern-port
+>>>>>>> ad6d7fef50d188d0522c749c2f45fc20b802e8fb
