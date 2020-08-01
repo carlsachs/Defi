@@ -23,12 +23,12 @@ const LearnHome = (props) => {
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('Intermediate')}>
-                    <Text style={styles.buttonTextLarge}>Beginner</Text>
+                    <Text style={styles.buttonTextLarge}>Intermediate</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('Advanced')}>
-                    <Text style={styles.buttonTextLarge}>Beginner</Text>
+                    <Text style={styles.buttonTextLarge}>Advanced</Text>
             </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -49,16 +49,22 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
       flex: 1,
-      marginTop: 25
+      marginTop: 100
     },
     button: {
-        padding: "5%",
-        backgroundColor: "red",
-        borderRadius: 5
+        padding: 40,
+        backgroundColor: "#208561",
+        borderRadius: 5,
     },
     buttonText: {
         color: "white",
         fontSize: 20,
         fontWeight: "bold"
+    },
+    buttonTextLarge: {
+        color: "#005134",
+        fontSize: 20,
+        fontWeight: "bold",
+        textAlign: "center"
     }
   })

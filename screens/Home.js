@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
       fontWeight: 'bold'
     },
     button: {
-        padding: "5%",
-        borderColor: "#20232a"
+        padding: 40,
+        backgroundColor: "#208561",
+        borderRadius: 5,
     },
     buttonText: {
         color: "white",
