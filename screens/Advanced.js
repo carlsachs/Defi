@@ -2,16 +2,16 @@ import React from "react";
 
 import { StyleSheet, SafeAreaView, View, Text } from "react-native";
 
-const Beginner = () => {
+const Advanced = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.text}>Beginner Page is displaying...</Text>
+            <Text style={styles.text}>Advanced Page is displaying...</Text>
         </SafeAreaView>
     )
 }
 
-export default Beginner;
+export default Advanced;
 
 const styles = StyleSheet.create({
     container: {
