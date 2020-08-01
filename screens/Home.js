@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { StyleSheet, TouchableOpacity, SafeAreaView, View, Text, Button } from "react-native";
+import axios from "axios";
+
+//import other components
+import FeaturedCoin from "../components/FeaturedCoin";
 
 const Home = (props) => {
+
+    const [featured, setFeatured] = useState();
+
+    useEffect(() => {
+        axios.get(`https://api.0xtracker.com/tokens/0xd46ba6d942050d489dbd938a2c909a5d5039a161`)
+        .then(res => {
+            console.log(res.data);
+            setFeatured(res.data);
+        })
+        .catch(err => {
+            console.log(err, "cmon carl")
+        })
+    }, [])
 
     const { navigation } = props;
 
     return (
         <SafeAreaView style={styles.container}>
+        <FeaturedCoin featured={featured} />
         <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('LearnHome')}>
@@ -24,7 +42,8 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#60B093'
+      backgroundColor: '#60B093',
+      fontFamily: "Roboto"
     },
     text: {
       color: 'white',
