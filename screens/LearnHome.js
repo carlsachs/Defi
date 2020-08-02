@@ -42,29 +42,26 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#ebf9ff',
+      backgroundColor: '#e4f7f0',
     },
     titleText: {
-      color: '#0c4761',
+      color: '#249e86',
       fontSize: 24,
       fontWeight: 'bold',
       flex: 1,
-      marginTop: 100
+      marginTop: 100,
+      fontFamily: "Quicksand"
     },
     button: {
         padding: 40,
-        backgroundColor: "#0c4761",
+        backgroundColor: "#36c4a3",
         borderRadius: 5,
-    },
-    buttonText: {
-        color: "white",
-        fontSize: 20,
-        fontWeight: "bold"
     },
     buttonTextLarge: {
         color: "white",
         fontSize: 20,
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "Quicksand"
     }
   })

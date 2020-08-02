@@ -25,6 +25,7 @@ const Home = (props) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Text style={styles.featuredTitle}>Featured DeFi Coin</Text>
             <FeaturedCoin featured={featured} />
         <View>
             <TouchableOpacity
@@ -44,7 +45,12 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      backgroundColor: '#ebf9ff',
+      backgroundColor: '#e4f7f0',
+    },
+    featuredTitle: {
+        fontSize: 24,
+        color: "#0b5248",
+        fontFamily: "Quicksand"
     },
     text: {
       color: 'white',
@@ -53,12 +59,13 @@ const styles = StyleSheet.create({
     },
     button: {
         padding: 40,
-        backgroundColor: "#0c4761",
+        backgroundColor: "#36c4a3",
         borderRadius: 5,
     },
     buttonText: {
         color: "white",
         fontSize: 20,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontFamily: "Quicksand"
     },
   })
