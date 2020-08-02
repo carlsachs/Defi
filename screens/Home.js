@@ -25,12 +25,14 @@ const Home = (props) => {
 
     return (
         <SafeAreaView style={styles.container}>
-        <FeaturedCoin featured={featured} />
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('LearnHome')}>
-                <Text style={styles.buttonText}>Learn</Text>
-        </TouchableOpacity>
+            <FeaturedCoin featured={featured} />
+        <View>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('LearnHome')}>
+                    <Text style={styles.buttonText}>Learn</Text>
+            </TouchableOpacity>
+        </View>
         </SafeAreaView>
     )
 }
@@ -40,10 +42,9 @@ export default Home;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
       alignItems: 'center',
-      backgroundColor: '#60B093',
-      fontFamily: "Roboto"
+      backgroundColor: '#ebf9ff',
     },
     text: {
       color: 'white',
@@ -52,12 +53,12 @@ const styles = StyleSheet.create({
     },
     button: {
         padding: 40,
-        backgroundColor: "#208561",
+        backgroundColor: "#0c4761",
         borderRadius: 5,
     },
     buttonText: {
         color: "white",
         fontSize: 20,
         fontWeight: "bold"
-    }
+    },
   })
