@@ -13,7 +13,6 @@ const Home = (props) => {
     useEffect(() => {
         axios.get(`https://api.0xtracker.com/tokens/0xd46ba6d942050d489dbd938a2c909a5d5039a161`)
         .then(res => {
-            console.log(res.data);
             setFeatured(res.data);
         })
         .catch(err => {

@@ -7,13 +7,15 @@ import LearnHome from "../screens/LearnHome";
 import Beginner from "../screens/Beginner";
 import Intermediate from "../screens/Intermediate";
 import Advanced from "../screens/Advanced";
+import Login from "../screens/Login";
 
 const Stack = createStackNavigator()
 
 function MainNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name='Login' component={Login} options={{ title: 'Login' }} />
         <Stack.Screen name='Home' component={Home} options={{ title: 'Home' }} />
         <Stack.Screen name="LearnHome" component={LearnHome} options={{ title: "Learn"}} />
         <Stack.Screen name="Beginner" component={Beginner} options={{ title: "Beginner"}} />

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text, Image } from "react-native";
 
 const FeaturedCoin = ({ featured }) => {
 
     const change = `featured.price.change`;
+
+    const logo = `featured.imageUrl`;
 
     return (
         <SafeAreaView style={styles.container}>
