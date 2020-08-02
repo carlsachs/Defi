@@ -22,11 +22,11 @@ export default FeaturedCoin;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#0c4761",
-        height: 175,
-        width: 175,
+        height: 300,
+        width: 250,
         borderRadius: 10,
         display: "flex",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
     },
     text: {
         color: "white",
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     name: {
         color: "white",
         textAlign: "center",
-        marginTop: 10,
+        marginTop: 15,
         fontSize: 20
     },
     symbol: {
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     },
     supply: {
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        marginBottom: 15,
+        marginLeft: 15,
+        marginRight: 15
     }
 })

@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#60B093'
+      backgroundColor: '#ebf9ff',
     },
     titleText: {
-      color: 'white',
+      color: '#0c4761',
       fontSize: 24,
       fontWeight: 'bold',
       flex: 1,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     button: {
         padding: 40,
-        backgroundColor: "#208561",
+        backgroundColor: "#0c4761",
         borderRadius: 5,
     },
     buttonText: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold"
     },
     buttonTextLarge: {
-        color: "#005134",
+        color: "white",
         fontSize: 20,
         fontWeight: "bold",
         textAlign: "center"
