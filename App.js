@@ -5,6 +5,7 @@ import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
 import MainNavigator from "./navigation/MainNavigator";
+import Drawer from "./navigation/DrawerNavigation";
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
     return <AppLoading />;
     } else {
     return (
-      <MainNavigator />
+      <DrawerNavigation />
     );
   }
 }

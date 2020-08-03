@@ -5,6 +5,7 @@ import axios from "axios";
 
 //import other components
 import FeaturedCoin from "../components/FeaturedCoin";
+import BottomNav from "../components/BottomNav";
 
 const Home = (props) => {
 
@@ -33,6 +34,7 @@ const Home = (props) => {
                     <Text style={styles.buttonText}>Learn</Text>
             </TouchableOpacity>
         </View>
+        <BottomNav props={navigation}/>
         </SafeAreaView>
     )
 }

@@ -12,20 +12,27 @@ const Login = (props) => {
                 <Form>
                     <Item rounded style={{
                         marginBottom: 30,
-                        marginTop: 100
+                        marginTop: 100,
+                        width: "90%",
+                        alignSelf: "center"
                     }}>
                     <Label style={styles.label}>Username</Label>
                     <Input />
                     </Item>
                     <Item rounded style={{
-                        marginBottom: 30
+                        marginBottom: 30,
+                        width: "90%",
+                        alignSelf: "center"
                     }}>
                     <Label style={styles.label}>Password</Label>
                     <Input />
                     </Item>
                 </Form>
-                <Button bordered rounded success>
-                    <Text>Login</Text>
+                <Button bordered rounded success style={styles.button} onPress={() => navigation.navigate('Home')}>
+                    <Text>Submit</Text>
+                </Button>
+                <Button bordered rounded success style={styles.button}>
+                    <Text>Register</Text>
                 </Button>
             </Content>
         </Container>
@@ -38,5 +45,11 @@ const styles = StyleSheet.create({
     label: {
         paddingLeft: 15,
         color: "#003566"
+    },
+    button: {
+        alignSelf: "center",
+        width: 200,
+        justifyContent: "center",
+        marginBottom: 15
     }
 })

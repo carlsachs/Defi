@@ -2,6 +2,8 @@ import React from "react";
 
 import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text } from "react-native";
 
+import LearnHome2 from "../screens/LearnHome2";
+
 const LearnHome = (props) => {
 
     const { navigation } = props;
@@ -17,7 +19,7 @@ const LearnHome = (props) => {
             }}>
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('Beginner')}>
+                onPress={() => navigation.navigate('LearnHome2')}>
                     <Text style={styles.buttonTextLarge}>Beginner</Text>
             </TouchableOpacity>
             <TouchableOpacity

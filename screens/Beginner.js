@@ -1,8 +1,11 @@
 import React from "react";
 
-import { StyleSheet, SafeAreaView, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, View, Text, TouchableOpacity } from "react-native";
+import { Button } from  "native-base";
 
-const Beginner = () => {
+const Beginner = (props) => {
+
+    const { navigation } = props;
 
     return (
         <SafeAreaView style={styles.container}>
