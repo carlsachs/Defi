@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, SafeAreaView, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, View, Text } from "react-native";
 import { Button } from "native-base";
 
 const Learn = (props) => {
@@ -12,8 +12,12 @@ const Learn = (props) => {
                 <Text style={styles.title}>Learn About DeFi</Text>
             </View>
             <View>
-                <Text style={style.titleBottom}>What is your exposure to Decentralized Finance?</Text>
-                <Button bordered rounded primary><Text>Beginner</Text></Button>
+                <Text style={styles.titleBottom}>What is your exposure to Decentralized Finance?</Text>
+            </View>
+            <View style={styles.buttons}>
+                <Button bordered block primary large style={styles.button1} onPress={() => navigation.navigate('Beginner')}><Text>Beginner</Text></Button>
+                <Button bordered block primary large style={styles.button2} onPress={() => navigation.navigate('Intermediate')}><Text>Intermediate</Text></Button>
+                <Button bordered block primary large style={styles.button3} onPress={() => navigation.navigate('Advanced')}><Text>Advanced</Text></Button>
             </View>
         </SafeAreaView>
     )
@@ -35,9 +39,28 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     titleBottom: {
-        fontSize: 40,
+        fontSize: 28,
         color: "#003a8c",
         fontFamily: "Quicksand",
-        textAlign: "center"
-    }
+        textAlign: "center",
+    },
+    buttons: {
+        height: 300,
+        justifyContent: "space-evenly"
+    },
+    button1: {
+        width: 200,
+        textAlign: "center",
+        borderColor: "#36d14b"
+    },
+    button2: {
+        width: 200,
+        textAlign: "center",
+        borderColor: "#603bd1"
+    },
+    button3: {
+        width: 200,
+        textAlign: "center",
+        borderColor: "#c9222b"
+    },
 })

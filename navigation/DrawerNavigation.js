@@ -8,12 +8,12 @@ import Beginner from "../screens/Beginner";
 import Learn from "../screens/Learn";
 import Login from "../screens/Login";
 import { NavigationContainer } from "@react-navigation/native";
+import FocusedName from "./FocusedName";
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigation() {
   return (
-      <NavigationContainer>
         <Drawer.Navigator drawerStyle={{
           backgroundColor: "#bae7ff"
         }}>
@@ -21,6 +21,5 @@ export default function DrawerNavigation() {
             <Drawer.Screen name="Learn" component={Learn} />
             <Drawer.Screen name="Login" component={Login} />
         </Drawer.Navigator>
-    </NavigationContainer>
   );
 }
