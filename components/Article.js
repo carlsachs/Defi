@@ -27,3 +27,5 @@ const Article = ( { articles } ) => {
         </Container>
     )
 }
+
+export default Article;
