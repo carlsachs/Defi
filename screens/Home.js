@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import { StyleSheet, TouchableOpacity, SafeAreaView, View, Text, Button } from "react-native";
+import { StyleSheet, TouchableOpacity, SafeAreaView, View, Text } from "react-native";
 import axios from "axios";
 
 //import other components
 import FeaturedCoin from "../components/FeaturedCoin";
-import BottomNav from "../components/BottomNav";
 
 const Home = (props) => {
 
@@ -27,14 +26,6 @@ const Home = (props) => {
         <SafeAreaView style={styles.container}>
             <Text style={styles.featuredTitle}>Featured DeFi Coin</Text>
             <FeaturedCoin featured={featured} />
-        <View>
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('LearnHome')}>
-                    <Text style={styles.buttonText}>Learn</Text>
-            </TouchableOpacity>
-        </View>
-        <BottomNav props={navigation}/>
         </SafeAreaView>
     )
 }
@@ -46,11 +37,11 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      backgroundColor: '#e4f7f0',
+      backgroundColor: '#e6f7ff',
     },
     featuredTitle: {
         fontSize: 24,
-        color: "#0b5248",
+        color: "#003a8c",
         fontFamily: "Quicksand"
     },
     text: {

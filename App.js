@@ -5,7 +5,8 @@ import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
 import MainNavigator from "./navigation/MainNavigator";
-import Drawer from "./navigation/DrawerNavigation";
+import DrawerNavigation from "./navigation/DrawerNavigation";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
 

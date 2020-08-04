@@ -6,18 +6,17 @@ const FeaturedCoin = ({ featured }) => {
 
     const change = `featured.price.change`;
 
-    const logo = `featured.imageUrl`;
-
     return (
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.name}>{featured.name}</Text>
-            <Text style={styles.symbol}>{featured.symbol}</Text>
-            <Text style={{color: change > 0 ? 'green' : 'red', textAlign: "center", fontSize: 23, fontFamily: "Quicksand"}}>${Math.round(featured.price.last * 100) / 100}</Text>
-            <Text style={styles.mktText}>Market Cap:</Text>
-            <Text style={styles.mktcap}>${Math.round(featured.marketCap)}</Text>
-            <Text style={styles.totalText}>Cir/Total Supply:</Text>
-            <Text style={styles.supply}>{Math.round(featured.circulatingSupply)} / {Math.round(featured.totalSupply)}</Text>
-        </SafeAreaView>
+        <SafeAreaView></SafeAreaView>
+        // <SafeAreaView style={styles.container}>
+        //     <Text style={styles.name}>{featured.name}</Text>
+        //     <Text style={styles.symbol}>{featured.symbol}</Text>
+        //     <Text style={{color: change > 0 ? 'green' : 'red', textAlign: "center", fontSize: 23, fontFamily: "Quicksand"}}>${Math.round(featured.price.last * 100) / 100}</Text>
+        //     <Text style={styles.mktText}>Market Cap:</Text>
+        //     <Text style={styles.mktcap}>${Math.round(featured.marketCap)}</Text>
+        //     <Text style={styles.totalText}>Cir/Total Supply:</Text>
+        //     <Text style={styles.supply}>{Math.round(featured.circulatingSupply)} / {Math.round(featured.totalSupply)}</Text>
+        // </SafeAreaView>
     )
 }
 
