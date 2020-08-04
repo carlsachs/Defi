@@ -1,6 +1,7 @@
 import React from "react";
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Text } from "react-native"
 
 //import Screens
 import Home from "../screens/Home";
@@ -14,8 +15,9 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigation() {
   return (
+    
         <Drawer.Navigator drawerStyle={{
-          backgroundColor: "#bae7ff"
+          backgroundColor: "#fafafa"
         }}>
             <Drawer.Screen name="Home" component={Home}/>
             <Drawer.Screen name="Learn" component={Learn} />
