@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: '#e6f7ff',
+        backgroundColor: 'white',
     },
     title: {
         fontSize: 40,

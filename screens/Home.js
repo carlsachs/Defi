@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { StyleSheet, TouchableOpacity, SafeAreaView, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, View, TouchableOpacity } from "react-native";
+import { Button, Container, Header, Content, Card, CardItem, Body, Text } from  "native-base";
 import axios from "axios";
 
 //import other components
@@ -8,15 +9,14 @@ import FeaturedCoin from "../components/FeaturedCoin";
 
 const Home = (props) => {
 
-    const [featured, setFeatured] = useState();
 
     useEffect(() => {
-        axios.get(`https://api.0xtracker.com/tokens/0xd46ba6d942050d489dbd938a2c909a5d5039a161`)
+        axios.get(``)
         .then(res => {
-            setFeatured(res.data);
+            console.log(res.data)
         })
         .catch(err => {
-            console.log(err, "cmon carl")
+            console.log(err, "there was an error")
         })
     }, [])
 
@@ -24,8 +24,7 @@ const Home = (props) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.featuredTitle}>Featured DeFi Coin</Text>
-            <FeaturedCoin featured={featured} />
+            <Text style={styles.featuredTitle}>DeFiDock</Text>
         </SafeAreaView>
     )
 }
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      backgroundColor: '#e6f7ff',
+      backgroundColor: 'white',
     },
     featuredTitle: {
         fontSize: 24,
