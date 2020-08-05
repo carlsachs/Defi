@@ -6,7 +6,6 @@ const Article = ( { articles } ) => {
     
     
     return (
-        <Container>
             <Content padder>
             <Card>
                 <CardItem header>
@@ -24,7 +23,6 @@ const Article = ( { articles } ) => {
                 </CardItem>
             </Card>
             </Content>
-        </Container>
     )
 }
 

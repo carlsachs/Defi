@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { View, Text, FlatList, ListItem } from "react-native";
+import { StyleSheet, View, Text, FlatList, ListItem } from "react-native";
 
 import { Container, Header, Left, Right, Body, Title, Button, Icon, Content } from "native-base";
 
@@ -49,9 +49,8 @@ const Track = (props) => {
     useEffect(() => {
         axios.get(`https://api.0xtracker.com/tokens/`)
         .then(res => {
-            // console.log("------------------------||||||||||||||" , res.data.tokens)
+            console.log("------------------------||||||||||||||" , res.data.tokens)
             setTokens(res.data.tokens)
-            console.log("-------------------", tokens, "CARLCARLCARLCARLCARLLUIS");
         })
         .catch(err => {
             console.log(err, "there was an error")
@@ -74,7 +73,7 @@ const Track = (props) => {
                 </Right>
             </Header>
 
-            <View>
+            <View style={styles.list}>
                 <FlatList
                 data={tokens}
                 keyExtractor={(tokens) => tokens.address.toString()}
@@ -89,3 +88,11 @@ const Track = (props) => {
 }
 
 export default Track;
+
+const styles = StyleSheet.create({
+    list: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly"
+    }
+})

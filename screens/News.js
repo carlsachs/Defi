@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { StyleSheet, SafeAreaView, View, TouchableOpacity } from "react-native";
+import { StyleSheet, SafeAreaView, View, FlatList } from "react-native";
 import { Button, Container, Header, Content, Body, Text, Title, Left, Right, Icon } from  "native-base";
 import axios from "axios";
 
@@ -39,10 +39,14 @@ const News = (props) => {
 
                 </Right>
             </Header>
-            <View>
-                {articles.map((article, i) => (
-                    <Article key={i} articles={article} />
-                ))}
+            <View style={styles.list}>
+                <FlatList
+                data={articles}
+                keyExtractor={(articles) => articles.id.toString()}
+                renderItem={({ item }) => (
+                    <Article articles={item} />
+                )
+                } />
             </View>
 
         </Container>
@@ -50,3 +54,10 @@ const News = (props) => {
 }
 
 export default News;
+
+const styles = StyleSheet.create({
+    list: {
+        padding: 0,
+        margin: 0
+    }
+})
