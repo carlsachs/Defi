@@ -4,20 +4,24 @@ import { StyleSheet, SafeAreaView, View, TouchableOpacity } from "react-native";
 import { Button, Container, Header, Content, Body, Text, Title, Left, Right, Icon } from  "native-base";
 import axios from "axios";
 
+import CardFlip from 'react-native-card-flip';
+
 const Home = (props) => {
 
-    // useEffect(() => {
-    //     axios.get(`https://api.0xtracker.com/articles`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         setArticles(res.data)
-    //     })
-    //     .catch(err => {
-    //         console.log(err, "there was an error")
-    //     })
-    // }, [])
-
     const { navigation } = props;
+
+    const [chainlink, setChainlink] = useState([]);
+
+    useEffect(() => {
+        axios.get(`https://api.0xtracker.com/tokens/0x514910771af9ca656af840dff83e8264ecf986ca`)
+        .then(res => {
+            console.log("------------------------||||||||||||||" , res.data)
+            setChainlink(res.data)
+        })
+        .catch(err => {
+            console.log(err, "there was an error")
+        })
+    }, [])
 
     return (
         <Container>
@@ -34,6 +38,29 @@ const Home = (props) => {
 
                 </Right>
             </Header>
+
+            <View>
+                <Text style={styles.title}>DeFi of the Day</Text>
+            </View>
+
+            <View>
+
+                <CardFlip style={styles.cardContainer} ref={(card) => this.card = card} >
+                    <TouchableOpacity style={styles.card} onPress={() => this.card.flip()} >
+                        <View>
+                            <Text style={styles.cardTitle}>ChainLink</Text>
+                            <Text style={styles.cardSymbol}>$LINK</Text>
+                            <Text style={styles.cardPrice}></Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.card} onPress={() => this.card.flip()} >
+                        <View>
+                            <Text style={styles.cardTitle}>{chainlink.name}</Text>
+                        </View>
+                    </TouchableOpacity>
+                </CardFlip>
+
+            </View>
 
         </Container>
     )
@@ -69,4 +96,31 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontFamily: "Quicksand"
     },
+    title: {
+        fontSize: 40,
+        color: "#003a8c",
+        fontFamily: "Quicksand",
+        textAlign: "center",
+        marginTop: 25,
+        marginBottom: 25
+    },
+    card: {
+        backgroundColor: "white",
+        borderColor: "black",
+        height: 150,
+        width: 150,
+        alignSelf: "center"
+    },
+    cardTitle: {
+        color: "#003a8c",
+        textAlign: "center"
+    },
+    cardSymbol: {
+        color: "#003a8c",
+        textAlign: "center"
+    },
+    cardPrice: {
+        color: "#003a8c",
+        textAlign: "center"
+    }
   })

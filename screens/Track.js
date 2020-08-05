@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { StyleSheet, View, Text, FlatList, ListItem } from "react-native";
+import Swiper from "react-native-swiper";
+
+import header from "../navigation/header.jpg";
+
+import { StyleSheet, View, Text, FlatList, ListItem, TouchableOpacity, Image } from "react-native";
 
 import { Container, Header, Left, Right, Body, Title, Button, Icon, Content } from "native-base";
 
@@ -11,19 +15,6 @@ import BasicCoin from "../components/BasicCoin";
 const Track = (props) => {
 
     const { navigation } = props;
-
-    const [tokens, setTokens] = useState([]);
-
-    useEffect(() => {
-        axios.get(`https://api.0xtracker.com/tokens/`)
-        .then(res => {
-            console.log("------------------------||||||||||||||" , res.data.tokens)
-            setTokens(res.data.tokens)
-        })
-        .catch(err => {
-            console.log(err, "there was an error")
-        })
-    }, [])
 
     return (
         <Container>
@@ -41,19 +32,27 @@ const Track = (props) => {
                 </Right>
             </Header>
             <View>
-                <Text style={styles.title}>Popular DeFi Coins</Text>
+                <Text style={styles.market}>Markets</Text>
             </View>
-            <View style={styles.list}>
-                <FlatList
-                numColumns={2}
-                data={tokens}
-                keyExtractor={(tokens) => tokens.address.toString()}
-                renderItem={({ item }) => (
-                    <BasicCoin tokens={item} onPress={() => navigation.navigate()}/>
-                )
-                } />
-            </View>
-
+            <View style={styles.swipe}>
+            <Swiper style={styles.wrapper} 
+                showsButtons={true}
+                autoplay={true}
+                showsPagination={false}
+                showsButtons={false}
+                >
+                <View style={styles.slide1}>
+                <Image source={header} alt="header" />
+                <Text style={styles.text}>Hello Swiper</Text>
+                </View>
+                <View style={styles.slide2}>
+                <Text style={styles.text}>Beautiful</Text>
+                </View>
+                    <View style={styles.slide3}>
+                    <Text style={styles.text}>And simple</Text>
+                </View>
+            </Swiper>
+        </View>
       </Container>
     )
 }
@@ -67,12 +66,65 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         height: 100
     },
-    title: {
-        fontSize: 40,
-        color: "#003a8c",
-        fontFamily: "Quicksand",
-        textAlign: "center",
-        marginTop: 25,
-        marginBottom: 25
+    swipe: {
+        marginTop: "5%",
+        height: 200,
+        width: 360,
+        alignSelf: "center"
     },
+    slide1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#9DD6EB'
+      },
+      slide2: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#97CAE5'
+      },
+      slide3: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#92BBD9'
+      },
+      text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold'
+      },
+      market: {
+          color: "#003a8c",
+          fontSize: 30,
+          fontFamily: "Quicksand",
+          textAlign: "center",
+          marginTop: 10
+      }
 })
+
+// <View style={styles.list}>
+// <FlatList
+// numColumns={2}
+// data={chainlink}
+// keyExtractor={(chainlink) => chainlink.id.toString()}
+// renderItem={({ item }) => (
+//     <BasicCoin chainlink={item} onPress={() => navigation.navigate()}/>
+// )
+// } />
+// </View>
+
+// <View style={styles.swipe}>
+// <Swiper style={styles.wrapper} showsButtons={true}>
+//     <View style={styles.slide1}>
+//     <Text style={styles.text}>Hello Swiper</Text>
+//     </View>
+//     <View style={styles.slide2}>
+//     <Text style={styles.text}>Beautiful</Text>
+//     </View>
+//         <View style={styles.slide3}>
+//         <Text style={styles.text}>And simple</Text>
+//     </View>
+// </Swiper>
+// </View>
