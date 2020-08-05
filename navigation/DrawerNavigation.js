@@ -7,21 +7,21 @@ import { Text } from "react-native"
 import Home from "../screens/Home";
 import Track from "../screens/Track";
 import Learn from "../screens/Learn";
+import News from "../screens/News";
 import Login from "../screens/Login";
+import { DrawerContent } from "../navigation/DrawerContent";
+import { NavigationContainer } from "@react-navigation/native";
 
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigation() {
   return (
-    
-        <Drawer.Navigator drawerStyle={{
-          backgroundColor: "#fafafa"
-        }}
-        >
+        <Drawer.Navigator drawerType="back">
             <Drawer.Screen name="Home" component={Home}/>
             <Drawer.Screen name="Track" component={Track}/>
             <Drawer.Screen name="Learn" component={Learn} />
+            <Drawer.Screen name="News" component={News}/>
             <Drawer.Screen name="Login" component={Login} />
         </Drawer.Navigator>
   );

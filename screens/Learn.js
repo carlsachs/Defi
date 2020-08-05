@@ -10,14 +10,14 @@ const Learn = (props) => {
         <Container>
             <Header>
                 <Left>
+                    <Button transparent style={{marginLeft: 20}}>
+                        <Icon name='menu' onPress={() => navigation.toggleDrawer()}/>
+                    </Button>
                 </Left>
                 <Body>
                     <Title>Learn</Title>
                 </Body>
                 <Right>
-                    <Button transparent>
-                        <Icon name='menu' onPress={() => navigation.toggleDrawer()}/>
-                    </Button>
                 </Right>
             </Header>
             <View>

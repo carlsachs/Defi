@@ -6,7 +6,6 @@ import { useFonts } from 'expo-font';
 
 import MainNavigator from "./navigation/MainNavigator";
 import DrawerNavigation from "./navigation/DrawerNavigation";
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {

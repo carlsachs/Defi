@@ -12,21 +12,19 @@ import DrawerNavigation from "../navigation/DrawerNavigation";
 
 const Stack = createStackNavigator()
 
-function MainNavigator() {
+export default function MainNavigator() {
 
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" headerMode="false">
-        <Stack.Screen name='Login' component={Login} options={{ title: 'Login' }} />
-        <Stack.Screen name='Learn' component={Learn} options={{ title: 'Learn' }} />
-        <Stack.Screen name='Home' component={DrawerNavigation} options={{ title: 'Home'}} />
-        <Stack.Screen name="Beginner" component={Beginner} options={{ title: "Beginner"}} />
-        <Stack.Screen name="Intermediate" component={Intermediate} options={{ title: "Intermediate"}} />
-        <Stack.Screen name="Advanced" component={Advanced} options={{ title: "Advanced"}} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" headerMode="false">
+          <Stack.Screen name='Login' component={Login} options={{ title: 'Login' }} />
+          <Stack.Screen name='Learn' component={Learn} options={{ title: 'Learn' }} />
+          <Stack.Screen name='Home' component={DrawerNavigation} options={{ title: 'Home'}} />
+          <Stack.Screen name="Beginner" component={Beginner} options={{ title: "Beginner"}} />
+          <Stack.Screen name="Intermediate" component={Intermediate} options={{ title: "Intermediate"}} />
+          <Stack.Screen name="Advanced" component={Advanced} options={{ title: "Advanced"}} />
+        </Stack.Navigator>
+      </NavigationContainer>
   )
 }
-
-export default MainNavigator
