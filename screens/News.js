@@ -39,6 +39,10 @@ const News = (props) => {
 
                 </Right>
             </Header>
+            <View>
+                <Text style={styles.title}>Recent News</Text>
+            </View>
+
             <View style={styles.list}>
                 <FlatList
                 data={articles}
@@ -59,5 +63,13 @@ const styles = StyleSheet.create({
     list: {
         padding: 0,
         margin: 0
-    }
+    },
+    title: {
+        fontSize: 40,
+        color: "#003a8c",
+        fontFamily: "Quicksand",
+        textAlign: "center",
+        marginTop: 25,
+        marginBottom: 25
+    },
 })

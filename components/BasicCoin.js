@@ -11,7 +11,10 @@ const BasicCoin = ( { tokens } ) => {
         <Container style={styles.container}>
             <View>
                 <Title>{tokens.symbol}</Title>
+                <View style={styles.view}>
                 <Title>${Math.round(tokens.price.last * 100) / 100}</Title>
+                <Title>{Math.round(change * 10) / 1000}%</Title>
+                </View>
             </View>
         </Container>
     )
@@ -23,6 +26,7 @@ const styles = StyleSheet.create({
     container: {
         height: 100,
         width: 100,
-        backgroundColor: "lightblue"
-    }
+        backgroundColor: "#f0f0f0",
+        justifyContent: "center"
+    },
 })

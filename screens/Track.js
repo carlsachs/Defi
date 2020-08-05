@@ -12,39 +12,7 @@ const Track = (props) => {
 
     const { navigation } = props;
 
-    const [isFetching, setIsFetching] = useState(false);
-    const [isFetched, setIsFetched] = useState(false);
-
     const [tokens, setTokens] = useState([]);
-
-    // const [tokens, setTokens] = useState([
-    //     {
-    //         id: "1",
-    //         name: "ETH",
-    //         price: "$2"
-    //     },
-    //     {
-    //         id: "2",
-    //         name: "ETH",
-    //         price: "$2"
-    //     },
-    //     {
-    //         id: "3",
-    //         name: "ETH",
-    //         price: "$2"
-    //     },
-    //     {
-    //         id: "4",
-    //         name: "ETH",
-    //         price: "$2"
-    //     },
-    //     {
-    //         id: "5",
-    //         name: "ETH",
-    //         price: "$2"
-    //     },
-        
-    // ]);
 
     useEffect(() => {
         axios.get(`https://api.0xtracker.com/tokens/`)
@@ -72,13 +40,16 @@ const Track = (props) => {
 
                 </Right>
             </Header>
-
+            <View>
+                <Text style={styles.title}>Popular DeFi Coins</Text>
+            </View>
             <View style={styles.list}>
                 <FlatList
+                numColumns={2}
                 data={tokens}
                 keyExtractor={(tokens) => tokens.address.toString()}
                 renderItem={({ item }) => (
-                    <BasicCoin tokens={item} />
+                    <BasicCoin tokens={item} onPress={() => navigation.navigate()}/>
                 )
                 } />
             </View>
@@ -92,7 +63,16 @@ export default Track;
 const styles = StyleSheet.create({
     list: {
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly"
-    }
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        height: 100
+    },
+    title: {
+        fontSize: 40,
+        color: "#003a8c",
+        fontFamily: "Quicksand",
+        textAlign: "center",
+        marginTop: 25,
+        marginBottom: 25
+    },
 })
