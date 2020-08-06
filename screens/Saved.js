@@ -16,7 +16,7 @@ const Saved = (props) => {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Home</Title>
+                    <Title>Saved</Title>
                 </Body>
                 <Right>
 

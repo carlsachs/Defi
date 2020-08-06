@@ -14,7 +14,7 @@ const Global = (props) => {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>General Crypto</Title>
+                    <Title>All Crypto</Title>
                 </Body>
                 <Right>
 
