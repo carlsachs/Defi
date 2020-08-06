@@ -8,6 +8,12 @@ import MainNavigator from "./navigation/MainNavigator";
 import DrawerNavigation from "./navigation/DrawerNavigation";
 import { NavigationContainer } from '@react-navigation/native';
 
+import * as firebase from "firebase";
+import { firebaseConfig } from "./firebase";
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 export default function App() {
 
   let [fontsLoaded] = useFonts({
