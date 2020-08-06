@@ -5,14 +5,11 @@ import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
 import MainNavigator from "./navigation/MainNavigator";
-import DrawerNavigation from "./navigation/DrawerNavigation";
-import { NavigationContainer } from '@react-navigation/native';
 
 import * as firebase from "firebase";
 import { firebaseConfig } from "./firebase";
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 export default function App() {
 
@@ -28,12 +25,3 @@ export default function App() {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
