@@ -3,14 +3,8 @@ import axios from "axios";
 
 import Swiper from "react-native-swiper";
 
-import header from "../navigation/header.jpg";
-
 import { StyleSheet, View, Text, FlatList, ListItem, TouchableOpacity, Image } from "react-native";
-
 import { Container, Header, Left, Right, Body, Title, Button, Icon, Content } from "native-base";
-
-//import other components
-import BasicCoin from "../components/BasicCoin";
 
 const Track = (props) => {
 
@@ -42,7 +36,6 @@ const Track = (props) => {
                 showsButtons={false}
                 >
                 <View style={styles.slide1}>
-                <Image source={header} alt="header" />
                 <Text style={styles.text}>Hello Swiper</Text>
                 </View>
                 <View style={styles.slide2}>
