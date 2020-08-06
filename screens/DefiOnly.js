@@ -1,9 +1,9 @@
 import React from "react";
 
 import { View, Text } from "react-native";
-import { Container, Header, Left, Right, Content, Title, Icon, Body, Button } from "native-base";
+import { Container, Header, Left, Right, Title, Button, Icon, Body } from "native-base";
 
-const Saved = (props) => {
+const DefiOnly = (props) => {
 
     const { navigation } = props;
 
@@ -16,17 +16,18 @@ const Saved = (props) => {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Home</Title>
+                    <Title>Defi Markets</Title>
                 </Body>
                 <Right>
 
                 </Right>
             </Header>
             <View>
-                <Text>User Saved Page is displaying</Text>
+                <Text>DefiMArkets pafge is showing</Text>
             </View>
+
         </Container>
     )
 }
 
-export default Saved;
+export default DefiOnly;

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Text, View } from "react-native";
-import { Container, Header, Left, Right, Title, Content } from "native-base"
+import { Container, Header, Left, Right, Title, Content, Icon, Body, Button } from "native-base"
 
 const Global = (props) => {
 
@@ -26,3 +26,5 @@ const Global = (props) => {
         </Container>
     )
 }
+
+export default Global;
